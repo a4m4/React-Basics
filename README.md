@@ -6,7 +6,7 @@ To print HEllo in just React :
   import ReactDOM from "react-dom";
 
       function Hello () {
-            return <div> Hello From the Other side ! </div>
+            return <div> Hello </div>
                         }
       ReactDOM.render(<Hello />, document.querySelector('#root'));
 
