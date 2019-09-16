@@ -11,7 +11,8 @@ To print HEllo in just React :
       ReactDOM.render(<Hello />, document.querySelector('#root'));
 
 
-now further : 
+now further :'
+
 -Change the text "Hello World!" to say "Hello <your name>!"
 -Bold your name by wrapping it in a <strong> tag. It works just like HTML.
 -Inside the <div>, and under your name, add some other HTML elements. Headings, ordered and unordered lists, etc. Get a feel for how it works. How does it handle whitespace? What happens if you forget to close a tag?
@@ -44,3 +45,18 @@ Solution :
                 }
 
             ReactDOM.render(<Hello />, document.querySelector('#root'));
+
+
+now moving towards props :
+A simple function works easily from this syntax in JS 
+            
+            function Hi() {
+                 return <div>Hello World!</div>;
+                        }
+                    
+But for React Component Props, we use  this syntax :
+
+          function Hi(props) {
+                 return <div>Hello {props.name}!</div>;
+                        }
+           reactDOM.render(<Hi name="Ali Mehdi" />, document.querySelector('#root'));
