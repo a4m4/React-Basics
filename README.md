@@ -90,6 +90,7 @@ Exercises of Props :
 1-Write a new component called `MediaCard` that accepts 3 props: title, body, and imageUrl. Inside the component, render the title in an h2 tag, the body in a p tag, and pass the imageUrl into an img tag . Can you return all 3 of these things at once? Or do you need to wrap them in another element?
 Render the MediaCard with the ReactDOM.render call, and pass in the necessary props. Can you pass a JSX element as a prop value? (hint: wrap it in single braces). Try bolding some parts of the body text without changing the implementation of MediaCard.
 
+Solution:
 
                 import React from "react";
                  import ReactDOM from "react-dom";
@@ -112,3 +113,75 @@ Render the MediaCard with the ReactDOM.render call, and pass in the necessary pr
                     imgUrl="http://www.gstatic.com/tv/thumb/persons/983712/983712_v9_ba.jpg" />,
                    document.querySelector('#root'));
 
+2-Make a component called Gate that accepts 1 prop called "isOpen". When isOpen is true, make the component render "open", and when isOpen is false, make it render "closed". Hint: you can do conditional logic inside JSX with the ternary (question mark, ?) operator, inside single braces, like this: {speed > 80 ? "danger!" : "probably fine"} (which evaluates to "danger!" if speed is over 80, and "probably fine" otherwise)
+
+Solution a :
+
+          import React, { Component } from "react";
+           import ReactDOM from "react-dom";
+
+           const Gate = (props) => {
+
+             const gate = props.isOpen;
+    
+             return(
+                <div> { gate ? 'Open' : 'Close' } </div> 
+    
+                  );
+               }
+
+
+           ReactDOM.render(
+             <Gate isOpen={false} />,
+            document.querySelector('#root'));        //use in every solution
+            
+Solution b :
+  
+          import React, { Component } from "react";
+          import ReactDOM from "react-dom";
+
+          function Gate(props) {
+
+            const gate = props.isOpen;
+    
+            return(
+               <div> { gate ? 'Open' : 'Close' } </div> 
+               );
+              }
+          
+        
+Solutin c:
+
+              import React, { Component } from "react";
+              import ReactDOM from "react-dom";
+
+               class Gate extends React.Component {
+                constructor(props) {
+                  super(props);
+                }
+
+                render() {
+                  return(
+                    <div> { this.props.isOpen ? 'Open' : 'Close' } </div> 
+                  );
+                }
+              }
+              
+              
+ Solution d :
+ 
+              class Gate extends React.Component {
+              constructor(props) {
+                super(props);
+              }
+
+              render() {
+                const isOpen = this.props.isOpen;
+
+                return (
+                  <div>
+                    <p>{isOpen === true ? "Open!" : "closed!"}</p>
+                  </div>
+                );
+              }
+              }
