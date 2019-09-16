@@ -11,7 +11,7 @@ To print HEllo in just React :
       ReactDOM.render(<Hello />, document.querySelector('#root'));
 
 
-now further :'
+now further :
 
 -Change the text "Hello World!" to say "Hello <your name>!"
 -Bold your name by wrapping it in a <strong> tag. It works just like HTML.
@@ -83,32 +83,32 @@ Then the internals of that component might look something like this:
          <div>Hi {props.firstName} {props.lastName}!</div>
        );
      }
-
 All of that syntax, by the way, is React (specifically, JSX). It's not ES6 JavaScript
 
 Exercises of Props :
+
 1-Write a new component called `MediaCard` that accepts 3 props: title, body, and imageUrl. Inside the component, render the title in an <h2> tag, the body in a <p> tag, and pass the imageUrl into an img tag like <img src={imageUrl}/>. Can you return all 3 of these things at once? Or do you need to wrap them in another element?
 Render the MediaCard with the ReactDOM.render call, and pass in the necessary props. Can you pass a JSX element as a prop value? (hint: wrap it in single braces). Try bolding some parts of the body text without changing the implementation of MediaCard.
 
 
-          import React from "react";
-           import ReactDOM from "react-dom";
+                import React from "react";
+                 import ReactDOM from "react-dom";
 
-          class MediaCard extends React.Component {
-            render() {
-              return(
-                 <div>
-                   <h2> {this.props.title}  ! </h2>
-                   <p> {this.props.body} </p>
-                   <img src={this.props.imgUrl}></img>
-                 </div>
-                 );
-              }
-          }
+                    class MediaCard extends React.Component {
+                  render() {
+                    return(
+                       <div>
+                         <h2> {this.props.title}  ! </h2>
+                         <p> {this.props.body} </p>
+                         <img src={this.props.imgUrl}></img>
+                       </div>
+                       );
+                    }
+                }
 
-            ReactDOM.render(
-              <MediaCard title="Hey, its Title" 
-               body={ <b>"I'm Body"</b> }
-              imgUrl="http://www.gstatic.com/tv/thumb/persons/983712/983712_v9_ba.jpg" />,
-             document.querySelector('#root'));
+                  ReactDOM.render(
+                    <MediaCard title="Hey, its Title" 
+                     body={ <b>"I'm Body"</b> }
+                    imgUrl="http://www.gstatic.com/tv/thumb/persons/983712/983712_v9_ba.jpg" />,
+                   document.querySelector('#root'));
 
