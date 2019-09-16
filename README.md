@@ -87,7 +87,7 @@ All of that syntax, by the way, is React (specifically, JSX). It's not ES6 JavaS
 
 Exercises of Props :
 
-1-Write a new component called `MediaCard` that accepts 3 props: title, body, and imageUrl. Inside the component, render the title in an <h2> tag, the body in a <p> tag, and pass the imageUrl into an img tag like <img src={imageUrl}/>. Can you return all 3 of these things at once? Or do you need to wrap them in another element?
+1-Write a new component called `MediaCard` that accepts 3 props: title, body, and imageUrl. Inside the component, render the title in an h2 tag, the body in a p tag, and pass the imageUrl into an img tag . Can you return all 3 of these things at once? Or do you need to wrap them in another element?
 Render the MediaCard with the ReactDOM.render call, and pass in the necessary props. Can you pass a JSX element as a prop value? (hint: wrap it in single braces). Try bolding some parts of the body text without changing the implementation of MediaCard.
 
 
