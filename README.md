@@ -185,3 +185,65 @@ Solutin c:
                 );
               }
               }
+
+
+Conveniently React has a thing called state which allows components to keep track of values that can change – a perfect place to store the state
+          import React from 'react';
+          import ReactDOM from 'react-dom';
+          function Room() {
+            return (
+              <div className="room">the room is lit</div>
+            );
+          }
+          ReactDOM.render(<Room />, document.getElementById('root'));
+
+In React, function components are stateless. Replace the whole function with this class instead.
+Example:          
+          class Room extends React.Component {
+                state = {
+                  isLit: true
+                }
+                render() {
+                  return (
+                    <div className="room">the room is lit</div>
+                  );
+                }
+              }
+
+
+Render according to state:
+
+Right now, the component works the same as before, because we haven’t changed anything in render. Let’s have it render differently based on the state of the light. Change the <div> to this:
+
+            <div className="room">
+              the room is {this.state.isLit ? 'lit' : 'dark'}
+            </div>
+
+As you can see, the light is still on. Now change isLit: true to false. The app will re-render saying “the room is dark.” 
+
+
+
+
+Change the state when you click the button:
+
+Let’s add a button and kick this thing into high gear. Change the div to look like this
+
+              <div className="room">
+                the room is {this.state.isLit ? "lit" : "dark"}
+                <br />
+                <button onClick={this.flipLight}>flip</button>
+              </div>
+
+So we’ve got a plain old line break with the <br/>, and then a button that says “flip”. When you click the button, it will call the this.flipLight function in the component. And if you’ve been paying attention, we don’t have a flipLight function… so let’s add that now.
+
+Above the render() function, and under the state initialization, add this code:
+
+                flipLight = () => {
+                  this.setState({
+                    isLit: !this.state.isLit
+                  });
+                };
+
+Remember how we talked about arrow functions yesterday? This is one of those. Except it’s inside a class, which makes it a member function.
+
+Click the “flip” button now. Does it work? Hooray! We’ll fix the stark white background in a sec, but let’s talk about this setState thing.
