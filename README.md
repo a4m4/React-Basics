@@ -247,3 +247,13 @@ Above the render() function, and under the state initialization, add this code:
 Remember how we talked about arrow functions yesterday? This is one of those. Except it’s inside a class, which makes it a member function.
 
 Click the “flip” button now. Does it work? Hooray! We’ll fix the stark white background in a sec, but let’s talk about this setState thing.
+
+
+How setState works
+
+In the flipLight function, we’re toggling the isLit state true/false depending on what it’s currently set to. You might wonder why we don’t just say this.state.isLit = !this.state.isLit. It’s because the setState function actually has 2 jobs:
+
+    a-first it changes the state
+    b-then it re-renders the component
+
+If you just change this.state directly, React has no way of knowing that it changed, and it won’t re-render. There are more reasons why changing state directly is a bad idea, but for now, just remember to always use this.setState, and don’t modify this.state.anything directly. 
