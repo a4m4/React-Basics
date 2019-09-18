@@ -257,3 +257,5 @@ In the flipLight function, we’re toggling the isLit state true/false depending
     b-then it re-renders the component
 
 If you just change this.state directly, React has no way of knowing that it changed, and it won’t re-render. There are more reasons why changing state directly is a bad idea, but for now, just remember to always use this.setState, and don’t modify this.state.anything directly. 
+
+
